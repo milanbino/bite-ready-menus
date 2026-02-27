@@ -1,13 +1,26 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import HeroSection from "@/components/HeroSection";
+import MenuSection from "@/components/MenuSection";
+import QRSection from "@/components/QRSection";
+import CartDrawer from "@/components/CartDrawer";
+import { CartProvider } from "@/context/CartContext";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <CartProvider>
+      <div className="min-h-screen bg-background">
+        <HeroSection />
+        <MenuSection />
+        <QRSection />
+        <CartDrawer />
+
+        {/* Footer */}
+        <footer className="py-8 text-center border-t border-border">
+          <p className="text-sm text-muted-foreground font-body">
+            Powered by <span className="text-gradient-warm font-semibold">MenuQR</span> — Digital menus for modern restaurants
+          </p>
+        </footer>
       </div>
-    </div>
+    </CartProvider>
   );
 };
 
